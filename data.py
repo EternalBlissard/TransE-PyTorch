@@ -33,7 +33,7 @@ class FB15KDataset(data.Dataset):
         self.relation2id = relation2id
         with open(data_path, "r") as f:
             # data in tuples (head, relation, tail)
-            self.data = [line[:-1].split("\t") for line in f]
+            self.data = [line[:-1].split("`") for line in f]
 
     def __len__(self):
         """Denotes the total number of samples."""
