@@ -13,7 +13,7 @@ def create_mappings(dataset_path: str) -> Tuple[Mapping, Mapping]:
     with open(dataset_path, "r") as f:
         for line in f:
             # -1 to remove newline sign
-            head, relation, tail = line[:-1].split("\t")
+            head, relation, tail = line[:-1].split("`")
             entity_counter.update([head, tail])
             relation_counter.update([relation])
     entity2id = {}
